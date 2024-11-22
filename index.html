@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con 4 Apartados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Barra de navegación */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .nav-bar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #575757;
+        }
+
+        /* Apartados */
+        .section {
+            display: none;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mostrar sección activa */
+        .active {
+            display: block;
+        }
+
+        /* Estilo de los apartados */
+        .section h2 {
+            margin-top: 0;
+        }
+
+        .section p {
+            line-height: 1.6;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Barra de navegación -->
+    <div class="nav-bar">
+        <a href="javascript:void(0)" onclick="showSection('section1')">Ev ETAPA 1</a>
+        <a href="javascript:void(0)" onclick="showSection('section2')">Ev ETAPA 2</a>
+        <a href="javascript:void(0)" onclick="showSection('section3')">Ev ETAPA 3</a>
+        <a href="javascript:void(0)" onclick="showSection('section4')">Ev ETAPA 4</a>
+    </div>
+
+    <!-- Apartados -->
+    <div id="section1" class="section">
+        <h2>Ev ETAPA 1</h2>
+        <p></p>
+        <!-- Usando un iframe para incrustar el PDF -->
+        <iframe src="1.4 - Evidencia de Aprendizaje - Presentación Digital (1).pdf" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+
+    <div id="section2" class="section">
+        <h2>Ev ETAPA 2</h2>
+        <p></p>
+        <iframe src="2.4 - EvA- Reporte de Práctica.pdf (1).pdf" width="100%" height="600px" style="border:none;"></iframe>
+
+    </div>
+
+    <div id="section3" class="section">
+        <h2>Ev ETAPA 3</h2>
+        <p></p>
+        <iframe src="3.4 - Evidencia de Aprendizaje - Reporte de Práctica.pdf.pdf" width="100%" height="600px" style="border:none;"></iframe>
+
+    </div>
+
+    <div id="section4" class="section">
+        <h2>Ev ETAPA 4</h2>
+        <p></p>
+        <iframe src="tu-archivo.pdf" width="100%" height="600px" style="border:none;"></iframe>
+
+    </div>
+</div>
+
+<script>
+    // Función para mostrar una sección
+    function showSection(sectionId) {
+        // Primero ocultamos todas las secciones
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => section.classList.remove('active'));
+
+        // Luego mostramos la sección seleccionada
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.classList.add('active');
+    }
+
+    // Mostrar el primer apartado por defecto al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        showSection('section1');
+    });
+</script>
+
+</body>
+</html>
